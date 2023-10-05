@@ -40,11 +40,13 @@
 }
 .side{
     /* border: 2px solid red; */
+    width: 25rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30rem;
+    /* width: 30rem; */
 }
 .bottom{
     width: 100%;
@@ -79,32 +81,46 @@
     color: rgb(165, 188, 188);
     border: 0.1rem solid rgb(165, 188, 188);
 }
-.lapBox{
+#lapBox{
     width: 100%;
     height: 8rem;
-    overflow: auto;
-    display: inline-block;
-    /* flex-direction: column;
+    max-height: 200px; /* Adjust the max-height as needed */
+    overflow-y:auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; */
-    /* position: relative; */
+    justify-content: center;
+    position: relative;
 }
-.lapBox ul li{
-    color: rgb(212, 211, 211);
-    overflow: auto;
-}
-@media screen and (max-width:250px){
+.lapList::-webkit-scrollbar {
+    width: 0.5em; /* Width of the scrollbar */
+}   
+@media screen and (max-width:1120px){
     .container{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        height: 50rem;
+        height: 33rem;
     }
     .side{
-        /* border: 2px solid red; */
         height: 20rem;
         justify-content: space-around;
+    }
+}
+@media screen and (max-width:610px){
+    .container{
+        height: 55rem;
+    }
+}
+@media screen and (max-width:500px){
+    .container{
+        height: 33rem;
+    }
+}
+@media screen and (max-width:450px){
+    .container{
+        height: 70rem;
     }
 }
 @media screen and (max-width:150px){

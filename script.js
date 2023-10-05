@@ -2,6 +2,7 @@ let startTime=0;
 let timeInterval;
 let running=false;
 let lapCount=1;
+let pauseTime=0;
 
 const stopwatch=document.getElementById("time");
 const startStopButton=document.getElementById("start");
@@ -13,7 +14,13 @@ lapResetButton.addEventListener("click", lapReset);
 
 function toggleStartStop() {
     if(!running) {
-        startTime=Date.now()-(startTime || 0);
+        if(startTime===0){
+            startTime=Date.now();
+        }
+        else{
+            const pausedTime=Date.now()-pauseTime;
+            startTime+=pausedTime;
+        }
         timeInterval=setInterval(updateStopwatch,100);
         startStopButton.textContent="Stop";
         lapResetButton.textContent="Lap";
@@ -24,6 +31,7 @@ function toggleStartStop() {
         startStopButton.textContent="Resume";
         lapResetButton.textContent="Reset";
         running=false;
+        pauseTime=Date.now();
     }
 }
 
@@ -52,12 +60,16 @@ function padTime(value) {
 function padMs(value) {
     return value.toString().padStart(2,"0");
 }
-
+function scrollToBottom() {
+    lapList.scrollTop = lapList.scrollHeight;
+}
 function lapDisplay(lapTime) {
     const lapItem=document.createElement("li");
     lapItem.textContent=`Lap ${lapCount} : ${lapTime}`;
-    lapItem.style.color= "rgb(165, 188, 188)";
+    lapItem.style.color= "rgb(164, 188, 188)";
+    lapItem.style.padding="0.3rem";
     lapList.appendChild(lapItem);
+    scrollToBottom();
 }
 
 function resetStopwatch() {
