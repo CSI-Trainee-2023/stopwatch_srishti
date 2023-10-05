@@ -10,18 +10,17 @@
 }
 .container{
     /* border: 2px solid teal; */
-    width: 30rem;
+    width: 60rem;
     height: 30rem; 
     margin: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     position: relative;
 } 
 .outerCircle{
-    width: 16rem;
-    height: 16rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     background-color: white;
     display: flex;
@@ -29,19 +28,23 @@
     justify-content: center;
 }
 .innerCircle{
-    width: 15rem;
-    height: 15rem;
+    width: 19rem;
+    height: 19rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
     color: rgb(99, 163, 163);
-    font-size: 2.4rem;
+    font-size: 3.4rem;
 }
-.lapBox{
-    width: 80%;
-    height: 9rem;
+.side{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
 }
 .bottom{
     width: 100%;
@@ -54,11 +57,11 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .btn{
-    width: 7rem;
-    height: 2rem;
+    width: 8rem;
+    height: 3rem;
     font-size: 1.4rem;
     background-color: rgb(165, 188, 188);
     border: none;
@@ -69,90 +72,55 @@
 #lap{
     background-color: transparent;
     color: rgb(212, 211, 211);
+    border:0.1rem solid white ;
 } 
 #start:hover{
     background-color: black;
     color: rgb(165, 188, 188);
+    border: 0.1rem solid rgb(165, 188, 188);
 }
 .lapBox{
     width: 100%;
     height: 8rem;
-    color:rgb(212, 211, 211) ;
     overflow: auto;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    justify-content: space-evenly; */
+    /* position: relative; */
 }
-.lapItem{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 0.3rem;
-    z-index: 1;
-} 
-/* @media screen and (max-width:1008px){
-    .time{
-        font-size: 6rem;
+.lapBox ul li{
+    color: rgb(212, 211, 211);
+    overflow: auto;
+}
+@media screen and (max-width:250px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50rem;
+    }
+    .side{
+        /* border: 2px solid red; */
+        height: 20rem;
+        justify-content: space-around;
     }
 }
-@media screen and (max-width:756px){
-    .time{
-        font-size: 5rem;
+@media screen and (max-width:150px){
+    .container{
+        width: 25rem;
     }
-}
-@media screen and (max-width:631px){
-    .time{
-        font-size: 4rem;
+    .outerCircle{
+        width: 15rem;
+        height: 15rem;
     }
-}
-@media screen and (max-width:504px){
-    .time{
-        font-size: 3rem;
+    .innerCircle{
+        width: 14rem;
+        height: 14rem;
+        font-size: 1.8rem;
     }
     .btn{
         width: 6rem;
     }
 }
-@media screen and (max-width:383px){
-    .time{
-        font-size: 2.5rem;
-    }
-    .btn{
-        width: 4rem;
-        height: 1.8rem;
-    }
-}
-@media screen and (max-width:314px){
-    .time{
-        font-size: 2rem;
-    }
-    .btn{
-        width: 3rem;
-        font-size: 1rem;
-    }
-}
-@media screen and (max-width:256px){
-    .time{
-        font-size: 1.8rem;
-    }.btn{
-        height: 1.3rem;
-    }
-}
-@media screen and (max-width:226px){
-    .time{
-        font-size: 1.4rem;
-    }
-}
-@media screen and (max-width:176px){
-    .time{
-        font-size:1rem ;
-    }
-    .btn{
-        height: 1rem;
-        font-size: ;
-    }
-} */  
