@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.myBody{
+Body{
     height: 100vh;
     background-color: black;
     display: flex;
@@ -84,7 +84,7 @@
 #lapBox{
     width: 100%;
     height: 8rem;
-    max-height: 200px; /* Adjust the max-height as needed */
+    max-height: 200px; 
     overflow-y:auto;
     display: flex;
     flex-direction: column;
@@ -94,8 +94,10 @@
 }
 .lapList::-webkit-scrollbar {
     width: 0.5em; /* Width of the scrollbar */
-}   
-@media screen and (max-width:1120px){
+}  
+
+/* adding media queries */
+@media screen and (max-width:1300px){
     .container{
         display: flex;
         flex-direction: column;
@@ -108,19 +110,37 @@
         justify-content: space-around;
     }
 }
-@media screen and (max-width:610px){
+@media screen and (max-width:600px){
     .container{
-        height: 55rem;
+        height: 30rem;
+    }
+    .outerCircle{
+        width: 18rem;
+        height: 18rem;
+    }
+    .innerCircle{
+        width: 17rem;
+        height: 17rem;
+        font-size: 2.6rem;
     }
 }
 @media screen and (max-width:500px){
     .container{
         height: 33rem;
     }
+    .outerCircle{
+        width: 15rem;
+        height: 15rem;
+    }
+    .innerCircle{
+        width: 14rem;
+        height: 14rem;
+        font-size: 1.8rem;
+    }
 }
 @media screen and (max-width:450px){
     .container{
-        height: 70rem;
+        height: 20rem;
     }
 }
 @media screen and (max-width:150px){
